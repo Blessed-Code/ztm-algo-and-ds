@@ -1,0 +1,13 @@
+RULES of bigO
+Rule 1: Always worst Case
+- pada contoh nemo tadi kita bisa tambahin break di dalam if biar kalo nemo udah ketemu gausah pak loop sampe akhir
+- tapi itu kalo posisi nemo di dalam array itu bagus, gimana kalo posisi dia di index paling akhir? tetep jadinya O(n)
+- oleh karena itu yang harus kita pikirkan itu si worst casenya
+
+Rule 2: Remove Constants
+Rule 3:
+Different inputs should have different variables: O(a + b).
+A and B arrays nested would be: O(a * b)
++ for steps in order
+* for nested steps
+Rule 4: Drop Non-dominant terms
