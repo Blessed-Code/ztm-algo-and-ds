@@ -12,4 +12,4 @@ function compressBoxesTwices(boxes, boxes2) {
 // ini bukan O(n) karena loopingnya beda sumber
 // kalo forEachnya untuk boxes aja maka bener jadi O(n)
 // karena ini 2 sumber berbeda anggepannya kaya O(n + m)
-// terus gimana kalo nested array?
+// terus gimana kalo nested array? -> O(n * m)
