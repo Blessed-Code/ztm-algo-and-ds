@@ -17,4 +17,7 @@ function findNemo (array) {
     console.log("Call to find Nemo took " + (t1 - t0) + " milliseconds.");
 }
 
+// secara notasi bigO function findNemo ini O(n) - Linear Time
+// maksudnya proses yang dilakukan sebanyak input diberikan
+// jika ada 1 input maka jalan 1 kali, 100 jalan 100 kali, 1000 jalan 1000 kali
 findNemo(large);
