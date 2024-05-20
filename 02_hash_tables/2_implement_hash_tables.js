@@ -41,10 +41,20 @@ class HashTable {
   }
 
   keys() {
+    if (!this.data.length) {
+      return [];
+    }
+
     const keysArray = [];
     for (let i = 0; i < this.data.length; i++) {
-      if (this.data[i]) {
-        keysArray.push(this.data[i][0][0]);
+      if (this.data[i] && this.data[i].length) {
+        if (this.data[i].length > 1) {
+          for (let j = 0; j < this.data[i].length; j++) {
+            keysArray.push(this.data[i][j][0]);
+          }
+        } else {
+          keysArray.push(this.data[i][0][0]);
+        }
       }
     }
     return keysArray;
