@@ -22,6 +22,7 @@ class BinarySearchTree {
       this.root = newNode;
     } else {
       let currentNode = this.root;
+      // ini merupakan implementasi divide and conquer. meskipun kita pake while, kita gak visit semua nodenya karena di tiap height kita make decision kiri apa kanan makanya O(logN)
       while (true) {
         if (newNode.value < currentNode.value) {
           // Left
@@ -43,7 +44,11 @@ class BinarySearchTree {
   }
   lookup(value) {
     if (typeof value !== "number") {
-      return this;
+      return "Value must be a number";
+    }
+
+    if (!this.root) {
+      return "Root have no value";
     }
 
     let node = this.root;
@@ -66,6 +71,25 @@ class BinarySearchTree {
       }
     }
   }
+
+  lookupSolution(value) {
+    if (!this.root) {
+      return false;
+    }
+
+    let currentNode = this.root;
+    while (currentNode) {
+      if (value < currentNode.value) {
+        currentNode = currentNode.left;
+      } else if (value > currentNode.value) {
+        currentNode = currentNode.right;
+      } else if (value === currentNode.value) {
+        return currentNode;
+      }
+    }
+
+    return false;
+  }
   remove() {}
 }
 
@@ -85,5 +109,5 @@ tree.insert(20);
 tree.insert(170);
 tree.insert(15);
 tree.insert(1);
-console.log(tree.lookup(1));
+console.log(tree.lookupSolution(20));
 // console.log(JSON.stringify(traverse(tree.root)));
